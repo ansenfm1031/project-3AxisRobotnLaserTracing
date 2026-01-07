@@ -49,7 +49,7 @@
 </p>
 
 > 원근 투영 방정식을 이용하여 교정  
-> 측정된 네 점의 xy 좌표(lp0~3x, lp0~3y)로 변환 행렬과 역행렬을 계산  
+> 측정된 네 점의 xy 좌표(lp0\~3x, lp0\~3y)로 변환 행렬과 역행렬을 계산  
 
 <img width="720" src="https://github.com/user-attachments/assets/995628b8-e1be-4012-ad44-8c1e8d9b7cca" /><br>
 
