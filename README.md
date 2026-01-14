@@ -6,7 +6,7 @@
 > **비전 좌표계와 로봇 좌표계 사이의 변환** 개념과 **PLC 프로그래밍**을 보다 깊게 익히기 위해 기획  
 > 최종적으로 가이드 이미지의 위치와 방향이 변해도 **교정 작업**을 통해 가이드 선을 따라 **레이저를 트레이싱**  
 
-<img width="720" src="https://github.com/user-attachments/assets/3f28534a-2066-4892-9a85-5737fa856724" /><br>
+<img width="720" src="docs/images/overview_001.png" /><br>
 
 ## 프로젝트 일정
 
@@ -24,16 +24,16 @@
 - OMRON H/W : FH-1050 VISION
 - Programming Tool : Studio 5000, FactoryTalk View Studio
 
-<img width="720" src="https://github.com/user-attachments/assets/b452fc1e-cb58-4f9b-872c-21c72fcb8471" /><br>
+<img width="720" src="docs/images/architecture_001.png" /><br>
 
 - 스위칭 허브를 통해 PLC, HMI, VISION, 서보 드라이버를 EtherNet 포트로 연결
 
-<img width="240" src="https://github.com/user-attachments/assets/0646f008-deff-4555-a9c6-f6d7dbab5b4e" /><br>
+<img width="240" src="docs/images/architecture_002.png" /><br>
 
 - 레이저 포인터를 측정할 수 있도록 비전 설치  
 - 사선으로 설치해 장애물에 가려지는 경우를 최소화
 
-<img width="240"  src="https://github.com/user-attachments/assets/2d5b08f5-1cf9-42b4-a15e-bcec0d6cf8c4" /><br>
+<img width="240"  src="docs/images/architecture_003.png" /><br>
 
 ## 핵심 기술
 
@@ -44,14 +44,14 @@
 > 따라서, 로봇의 xy 좌표와 영상의 xy 좌표를 서로 변환할 때, 이러한 내부 요인을 제거하도록 파라미터 값을 구하는 교정(Calibration) 작업 필요  
 
 <p align="left">
-  <img width="360" src="https://github.com/user-attachments/assets/d16a637a-8518-412f-97ce-cfb6c336a1a7" />
-  <img width="360" src="https://github.com/user-attachments/assets/04230710-c761-401f-9a5c-9ca636125ae2" />
+  <img width="360" src="docs/images/cam_cal_001.png" />
+  <img width="360" src="docs/images/cam_cal_002.png" />
 </p>
 
 > 원근 투영 방정식을 이용하여 교정  
 > 측정된 네 점의 xy 좌표(lp0\~3x, lp0\~3y)로 변환 행렬과 역행렬을 계산  
 
-<img width="720" src="https://github.com/user-attachments/assets/995628b8-e1be-4012-ad44-8c1e8d9b7cca" /><br>
+<img width="720" src="docs/images/cam_cal_003.png" /><br>
 
 ### PLC 및 래더 프로그래밍
 
@@ -59,31 +59,31 @@
 - 갱신 버튼을 눌렀을 때의 래더 일부분
 - 가이드 선의 위치와 각도 갱신
 
-<img width="720" src="https://github.com/user-attachments/assets/682c37a3-4b2b-4819-8c0a-0dad5540fcba" /><br>
+<img width="720" src="docs/images/plc_001.png" /><br>
 
 - 좌표 계산과 반복적인 이동은 ST로 프로그래밍
 - 펑션블록 활용해 매개변수를 입력 받아 이동을 완료 후 결과를 출력하는 형태로 구현
 - 가이드 선의 위치와 각도, 회전 중심 값을 입력 받아 순차적으로 움직이게 하는 펑션블록의 일부분
 
-<img width="720" alt="image" src="https://github.com/user-attachments/assets/b0d3c478-bfe8-43d3-b8ce-b0bac411b533" /><br>
+<img width="720" alt="image" src="docs/images/plc_002.png" /><br>
 
 ## 작동 이미지
 
 - 정해진 네 점으로 이동해 좌표를 측정하고 교정 작업을 진행
 
-<img width="720" src="https://github.com/user-attachments/assets/6554c194-f72f-4e15-83a0-f38c292a1f55" /><br>
+<img width="720" src="docs/images/running_001.png" /><br>
 
 - 정해진 각도로 회전하며 회전 중심 계산
 
-<img width="720" src="https://github.com/user-attachments/assets/1a45b9c0-ad63-4070-aee4-3892b141e14b" /><br>
+<img width="720" src="docs/images/running_002.png" /><br>
 
 - 레이저 포인터 하나를 이용해 가이드 선을 트레이싱
 
-<img width="720" src="https://github.com/user-attachments/assets/1a89d6b0-ef5e-4357-843e-92be54c6434a" /><br>
+<img width="720" src="docs/images/running_003.png" /><br>
 
 - 레이저 포인터 둘을 이용해 가이드 선의 양 끝을 맞춰가며 트레이싱
 
-<img width="720" src="https://github.com/user-attachments/assets/8a44fef1-0af7-4359-a200-abfb1ebbb92e" /><br>
+<img width="720" src="docs/images/running_004.png" /><br>
 
 ## 프로젝트 보완점과 추후 발전 가능성
 
